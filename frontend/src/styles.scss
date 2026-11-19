@@ -1,0 +1,312 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+  color-scheme: dark;
+  --bg: #0b1020;
+  --panel: #111827;
+  --panel-2: #182235;
+  --border: #26344d;
+  --text: #eef4ff;
+  --muted: #9baac2;
+  --accent: #7c5cff;
+  --accent-2: #22c55e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, Segoe UI, sans-serif;
+}
+
+button,
+a,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: #a99aff;
+  text-decoration: none;
+}
+
+.top-nav {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  border-bottom: 1px solid var(--border);
+  background: #0d1424;
+}
+
+.top-nav div {
+  display: flex;
+  gap: 24px;
+}
+
+.brand {
+  color: white;
+  font-weight: 750;
+}
+
+.brand-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  margin-right: 8px;
+  background: var(--accent);
+}
+
+.auth-page {
+  min-height: calc(100vh - 64px);
+  display: grid;
+  place-items: center;
+}
+
+.auth-card {
+  width: min(420px, calc(100% - 32px));
+  display: grid;
+  gap: 14px;
+  padding: 32px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--panel);
+  box-shadow: 0 20px 60px #0004;
+}
+
+.auth-card input,
+.composer input {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #0c1322;
+  color: white;
+}
+
+.auth-card button,
+.composer button,
+.dashboard header button,
+.chat-page aside button {
+  padding: 12px 16px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--accent);
+  color: white;
+}
+
+.error {
+  color: #fb7185;
+}
+
+.dashboard {
+  max-width: 1200px;
+  margin: auto;
+  padding: 36px 24px;
+}
+
+.dashboard header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.eyebrow {
+  color: var(--accent-2);
+  letter-spacing: .12em;
+  font-size: .75rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 28px 0;
+}
+
+.stats article {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--panel);
+}
+
+.stats strong {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.8rem;
+}
+
+.stats span,
+.repo-card p {
+  color: var(--muted);
+}
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.repo-card {
+  position: relative;
+  min-height: 170px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--panel);
+}
+
+.repo-card div {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.visibility {
+  color: var(--accent-2);
+  text-transform: uppercase;
+  font-size: .75rem;
+}
+
+.explorer,
+.chat-page {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: calc(100vh - 64px);
+}
+
+.explorer aside,
+.chat-page aside {
+  padding: 20px;
+  border-right: 1px solid var(--border);
+  background: var(--panel);
+}
+
+.explorer aside button,
+.chat-page aside button {
+  display: block;
+  width: 100%;
+  margin: 5px 0;
+  padding: 8px;
+  text-align: left;
+  color: white;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+}
+
+.explorer main {
+  min-width: 0;
+  padding: 24px;
+}
+
+.explorer pre {
+  height: calc(100vh - 150px);
+  overflow: auto;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #080d18;
+  color: #c7d2fe;
+}
+
+.chat-page main {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-width: 0;
+}
+
+.messages {
+  overflow: auto;
+  padding: 24px;
+}
+
+.messages article {
+  max-width: 75%;
+  margin: 10px 0 10px auto;
+  padding: 14px;
+  border-radius: 12px 12px 2px 12px;
+  background: #332a67;
+}
+
+.messages article:not(.user) {
+  margin-left: 0;
+  margin-right: auto;
+  border-radius: 12px 12px 12px 2px;
+  background: var(--panel);
+}
+
+.messages p {
+  margin: 6px 0 0;
+  white-space: pre-wrap;
+}
+
+.composer {
+  display: flex;
+  gap: 10px;
+  padding: 16px 24px;
+  border-top: 1px solid var(--border);
+}
+
+.composer input {
+  flex: 1;
+}
+
+@media (max-width: 900px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .repo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .explorer,
+  .chat-page {
+    grid-template-columns: 180px 1fr;
+  }
+
+  .top-nav {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .explorer,
+  .chat-page {
+    grid-template-columns: 1fr;
+  }
+
+  .explorer aside,
+  .chat-page aside {
+    display: none;
+  }
+
+  .messages article {
+    max-width: 90%;
+  }
+}
